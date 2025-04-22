@@ -1,9 +1,13 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "dev": "node --no-warnings=ExperimentalWarning --loader ts-node/esm index.ts",
+    "start": "nodemon index.ts",
+    "start": "nodemon --watch './**/*.ts' --exec 'node --loader ts-node/esm' index.ts"
   },
   "keywords": [],
   "author": "",
@@ -14,9 +18,14 @@
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "firebase-admin": "^13.2.0",
+    "pg": "^8.15.0",
     "typescript": "^5.8.3"
   },
   "devDependencies": {
-    "nodemon": "^3.1.9"
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.14.1",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2"
   }
 }
